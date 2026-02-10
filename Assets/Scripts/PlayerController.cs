@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     
     [FormerlySerializedAs("_animator")] public Animator animator;
     private Rigidbody2D _rb;
-    private bool _enSuelo = true;
+    private bool _enSuelo = false;
 
     void Start()
     {
