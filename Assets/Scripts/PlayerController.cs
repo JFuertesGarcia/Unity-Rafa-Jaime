@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float fuerzaSalto = 10f;
     public float fixedRotation = 0;
     
-    public Animator animator;
+    [FormerlySerializedAs("_animator")] public Animator animator;
     private Rigidbody2D _rb;
     private bool _enSuelo = true;
 
@@ -27,8 +28,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
-        // Bloqueo rotation pa q no se gire
+        animator.SetFloat("VelocidadY", _rb.linearVelocity.y);
+        animator.SetBool("enSuelo", _enSuelo);
         
         float velocidadX = Input.GetAxis("Horizontal");
         
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && _enSuelo)
         {
             if (_rb != null) {
+                animator.SetTrigger("Salto");
                 // Aplicamos la fuerza de salto
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, fuerzaSalto);
                 _enSuelo = false;
@@ -61,9 +63,24 @@ public class PlayerController : MonoBehaviour
     {
         GameObject g = collision.gameObject;
         if (g.CompareTag("Ground") && 
-            g.transform.position.y +g.transform.localScale.y<= transform.position.y)
+            g.transform.position.y<= transform.position.y)
         {
-            _enSuelo = true;
+            foreach (ContactPoint2D punto in collision.contacts)
+            {
+                // La "Normal" es la dirección hacia donde apunta la cara del objeto chocado.
+                // Si la normal apunta hacia arriba (y > 0.5), es que estamos pisando una superficie plana.
+                if (!(punto.normal.y > 0.5f)) continue;
+                _enSuelo = true;
+                break;
+            }
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        GameObject g = collision.gameObject;
+        if (g.CompareTag("Ground"))
+        {
+            _enSuelo = false;
         }
     }
 }
