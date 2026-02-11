@@ -300,7 +300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858ae2e5122760a488732de919e150ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  targetAspect: 1.625
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9271c5c7e06b74b94c5ce9907de98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomManager
-  roomPrefab: {fileID: 0}
+  roomPrefab: {fileID: 8864053465488632669, guid: 2824ea965241daf41855ea9bf67d6fe5, type: 3}
   MaxRooms: 15
   MinRooms: 10
 --- !u!4 &1094530153
