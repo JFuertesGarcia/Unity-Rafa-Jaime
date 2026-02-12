@@ -7,6 +7,7 @@ public class Room : MonoBehaviour
     [SerializeField] private Door leftDoor;
     [SerializeField] private Door rightDoor;
     
+    
     public Vector2Int RoomIndex { get; set; }
 
     public void OpenDoor(Vector2Int direction)
