@@ -170,6 +170,8 @@ public class RoomManager : MonoBehaviour
         return new Vector3(roomWidth * (gridX - gridSizeX / 2),
             roomHeight * (gridY - gridSizeY / 2));
     }
+    
+    
 
     private void OnDrawGizmos()
     {
