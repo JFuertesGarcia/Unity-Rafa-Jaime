@@ -75,6 +75,22 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            foreach (ContactPoint2D punto in collision.contacts)
+            {
+                // Si detectamos un punto de apoyo válido, estamos en el suelo
+                if (punto.normal.y > 0.5f)
+                {
+                    _enSuelo = true;
+                    break;
+                }
+            }
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         GameObject g = collision.gameObject;
