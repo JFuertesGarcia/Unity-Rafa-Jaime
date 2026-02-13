@@ -143,12 +143,12 @@ TextureImporter:
       name: male_hero-run_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 48
-        width: 33
-        height: 36
+        x: 32
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: male_hero-run_1
       rect:
         serializedVersion: 2
-        x: 175
-        y: 48
-        width: 31
-        height: 34
+        x: 159
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +187,12 @@ TextureImporter:
       name: male_hero-run_2
       rect:
         serializedVersion: 2
-        x: 301
-        y: 48
-        width: 32
-        height: 33
+        x: 287
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: male_hero-run_3
       rect:
         serializedVersion: 2
-        x: 430
-        y: 48
-        width: 40
-        height: 35
+        x: 417
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: male_hero-run_4
       rect:
         serializedVersion: 2
-        x: 559
-        y: 51
-        width: 39
-        height: 33
+        x: 546
+        y: 43
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,37 +250,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: male_hero-run_5
-      rect:
-        serializedVersion: 2
-        x: 686
-        y: 48
-        width: 39
-        height: 36
-      alignment: 9
-      pivot: {x: 0.6, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: aec397397d21f50f0800000000000000
-      internalID: -1126160664717869846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: male_hero-run_6
       rect:
         serializedVersion: 2
-        x: 814
-        y: 48
-        width: 32
-        height: 34
+        x: 673
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -297,12 +275,12 @@ TextureImporter:
       name: male_hero-run_7
       rect:
         serializedVersion: 2
-        x: 941
-        y: 48
-        width: 32
-        height: 33
+        x: 800
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -319,12 +297,12 @@ TextureImporter:
       name: male_hero-run_8
       rect:
         serializedVersion: 2
-        x: 1068
-        y: 48
-        width: 37
-        height: 35
+        x: 927
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -338,23 +316,45 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: male_hero-run_9
+      name: male_hero-run_10
       rect:
         serializedVersion: 2
-        x: 1197
-        y: 51
-        width: 36
-        height: 34
+        x: 1057
+        y: 40
+        width: 91
+        height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.37362638, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4e43fdfc1d0003370800000000000000
-      internalID: 8300135014379500772
+      spriteID: 89ec8e74412ea80499f241a306df7eb9
+      internalID: -14728703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: male_hero-run_11
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 43
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.37362638, y: 0.15384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd8b5e2e0181b546b908ed9fe742f9e
+      internalID: 1300558227
       vertices: []
       indices: 
       edges: []
@@ -373,10 +373,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.6000000238418579,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":91.0,"y":52.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":50.0},"pivot":{"x":0.5054945349693298,"y":0.1538461595773697},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       male_hero-run_0: 6881137366877979371
       male_hero-run_1: -1237146446128320748
+      male_hero-run_10: -14728703
+      male_hero-run_11: 1300558227
       male_hero-run_2: 4469020905165885591
       male_hero-run_3: 2471363540651039515
       male_hero-run_4: 8291465375779293475

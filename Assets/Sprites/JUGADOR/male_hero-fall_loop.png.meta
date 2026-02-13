@@ -122,12 +122,12 @@ TextureImporter:
       name: male_hero-fall_loop_0
       rect:
         serializedVersion: 2
-        x: 46
-        y: 47
-        width: 29
+        x: 25
+        y: 46
+        width: 91
         height: 52
       alignment: 9
-      pivot: {x: 0.5862069, y: 0}
+      pivot: {x: 0.42857143, y: 0.05769231}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -144,12 +144,12 @@ TextureImporter:
       name: male_hero-fall_loop_1
       rect:
         serializedVersion: 2
-        x: 172
-        y: 47
-        width: 31
+        x: 153
+        y: 46
+        width: 91
         height: 52
       alignment: 9
-      pivot: {x: 0.61290324, y: 0}
+      pivot: {x: 0.42857143, y: 0.05769231}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: male_hero-fall_loop_2
       rect:
         serializedVersion: 2
-        x: 301
-        y: 47
-        width: 30
+        x: 281
+        y: 46
+        width: 91
         height: 52
       alignment: 9
-      pivot: {x: 0.6, y: 0}
+      pivot: {x: 0.42857143, y: 0.05769231}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -196,7 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":91.0,"y":52.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":20.0,"y":76.0},"pivot":{"x":0.5054945349693298,"y":0.1538461595773697},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       male_hero-fall_loop_0: -45423721824981134
       male_hero-fall_loop_1: 6617028741676489266

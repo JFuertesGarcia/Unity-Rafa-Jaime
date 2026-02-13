@@ -131,12 +131,12 @@ TextureImporter:
       name: male_hero-jump_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 48
-        width: 31
-        height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 26
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: male_hero-jump_1
       rect:
         serializedVersion: 2
-        x: 182
-        y: 48
-        width: 16
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 153
+        y: 41
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: male_hero-jump_2
       rect:
         serializedVersion: 2
-        x: 305
-        y: 48
-        width: 28
-        height: 44
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 281
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: male_hero-jump_3
       rect:
         serializedVersion: 2
-        x: 430
-        y: 49
-        width: 30
-        height: 40
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 409
+        y: 41
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: male_hero-jump_4
       rect:
         serializedVersion: 2
-        x: 558
-        y: 51
-        width: 29
-        height: 37
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 536
+        y: 43
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: male_hero-jump_5
       rect:
         serializedVersion: 2
-        x: 685
-        y: 53
-        width: 30
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 665
+        y: 45
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -273,7 +273,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":91.0,"y":52.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":35.0,"y":50.0},"pivot":{"x":0.5054945349693298,"y":0.1538461595773697},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       male_hero-jump_0: -6923868493313737339
       male_hero-jump_1: 1985493436221940470

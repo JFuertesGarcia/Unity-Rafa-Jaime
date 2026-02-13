@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,12 +140,12 @@ TextureImporter:
       name: male_hero-combo_2_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 47
-        width: 44
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 30
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.3956044, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: male_hero-combo_2_1
       rect:
         serializedVersion: 2
-        x: 181
-        y: 47
-        width: 29
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 158
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.3956044, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: male_hero-combo_2_2
       rect:
         serializedVersion: 2
-        x: 308
-        y: 47
-        width: 33
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 286
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.3956044, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: male_hero-combo_2_3
       rect:
         serializedVersion: 2
-        x: 409
-        y: 47
-        width: 90
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 411
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.3956044, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: male_hero-combo_2_4
       rect:
         serializedVersion: 2
-        x: 536
-        y: 47
-        width: 53
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 539
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.3956044, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,86 +250,20 @@ TextureImporter:
       name: male_hero-combo_2_5
       rect:
         serializedVersion: 2
-        x: 592
-        y: 71
-        width: 17
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f285e7d9ada00ed0800000000000000
-      internalID: -2449767252306328848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: male_hero-combo_2_6
-      rect:
-        serializedVersion: 2
-        x: 602
-        y: 47
-        width: 27
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 42a23f6799b584910800000000000000
-      internalID: 1821806763955137060
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: male_hero-combo_2_7
-      rect:
-        serializedVersion: 2
         x: 667
-        y: 47
-        width: 68
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 40
+        width: 91
+        height: 52
+      alignment: 9
+      pivot: {x: 0.3956044, y: 0.15384616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b643e81a3a324ac50800000000000000
-      internalID: 6675499733367010411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: male_hero-combo_2_8
-      rect:
-        serializedVersion: 2
-        x: 740
-        y: 50
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ec8fab99becbf7980800000000000000
-      internalID: -8538898648388667186
+      spriteID: 8c500045fc7d2154eb16325bb91dc0ab
+      internalID: -2449767252306328848
       vertices: []
       indices: 
       edges: []
@@ -338,7 +272,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 15fa3778d0315f84696bb931d7346a17
     internalID: 0
     vertices: []
     indices: 
@@ -346,7 +280,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":91.0,"y":52.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":30.0,"y":50.0},"pivot":{"x":0.5054945349693298,"y":0.1538461595773697},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":1,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       male_hero-combo_2_0: 2841042033015214791
       male_hero-combo_2_1: 6773909760351945656
@@ -354,9 +290,6 @@ TextureImporter:
       male_hero-combo_2_3: 8174830846537940748
       male_hero-combo_2_4: 106074968515182017
       male_hero-combo_2_5: -2449767252306328848
-      male_hero-combo_2_6: 1821806763955137060
-      male_hero-combo_2_7: 6675499733367010411
-      male_hero-combo_2_8: -8538898648388667186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

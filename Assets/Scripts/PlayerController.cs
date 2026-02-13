@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [FormerlySerializedAs("_animator")] public Animator animator;
     private Rigidbody2D _rb;
     private bool _enSuelo = false;
+    private bool atacando = false;
+    private Coroutine attackCoroutine;
 
     void Start()
     {
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetFloat("VelocidadY", _rb.linearVelocity.y);
         animator.SetBool("enSuelo", _enSuelo);
+        animator.SetBool("atacando",atacando);
         
         float velocidadX = Input.GetAxis("Horizontal");
         
@@ -56,6 +60,13 @@ public class PlayerController : MonoBehaviour
                 _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, fuerzaSalto);
                 _enSuelo = false;
             }
+        }
+
+        if (Input.GetKey(KeyCode.E) && !atacando)
+        {
+            if (attackCoroutine != null) StopCoroutine(attackCoroutine);
+            
+            attackCoroutine = StartCoroutine(PerformAttack());
         }
     }
 
@@ -98,5 +109,33 @@ public class PlayerController : MonoBehaviour
         {
             _enSuelo = false;
         }
+    }
+    
+    IEnumerator PerformAttack()
+    {
+        atacando = true;
+        animator.SetBool("atacando", true); // Asegúrate de tener este parámetro en tu Animator
+
+        // Esperar exactamente 1 segundo
+        yield return new WaitForSeconds(0.30f);
+
+        // Volver al estado normal después del segundo
+        FinishAttack();
+    }
+    public void InterruptAttack()
+    {
+        if (atacando)
+        {
+            if (attackCoroutine != null) StopCoroutine(attackCoroutine);
+            FinishAttack();
+            Debug.Log("Ataque interrumpido");
+        }
+    }
+
+    private void FinishAttack()
+    {
+        atacando = false;
+        animator.SetBool("atacando", false);
+        attackCoroutine = null;
     }
 }
