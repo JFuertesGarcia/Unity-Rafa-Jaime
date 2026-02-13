@@ -864,6 +864,23 @@ MonoBehaviour:
   roomPrefab: {fileID: 8864053465488632669, guid: 2824ea965241daf41855ea9bf67d6fe5, type: 3}
   MaxRooms: 15
   MinRooms: 10
+  layoutPrefabs:
+  - {fileID: 4432883583969369125, guid: 41c62f7e3aa192d47a8e81a940278271, type: 3}
+  - {fileID: 2721919313766213920, guid: 21e4ed3abce621648bdf7fd8b3727abf, type: 3}
+  - {fileID: 2721919313766213920, guid: 874ea687a27edea48ac7a57a772ee386, type: 3}
+  - {fileID: 2721919313766213920, guid: 2af77afb8cfb25242b10f63c6c050d15, type: 3}
+  - {fileID: 2721919313766213920, guid: c46513e5a24a25848af42eaf5c6d0014, type: 3}
+  - {fileID: 2721919313766213920, guid: 68b265b2f76c81f41a62ac17e7b8bf6b, type: 3}
+  - {fileID: 2721919313766213920, guid: 1692ea065d35ee843bf1ab9d94cdff37, type: 3}
+  - {fileID: 2721919313766213920, guid: 0349583fd39d7f146921193eb18e175f, type: 3}
+  - {fileID: 2721919313766213920, guid: 559caa6fb423f0641a13aabfd8fe57f0, type: 3}
+  - {fileID: 2721919313766213920, guid: 1e2af8b36a3d146459287b4d347d9cb5, type: 3}
+  - {fileID: 8030059934066265309, guid: 4467cb8b541217b4d9e396da47ad95f4, type: 3}
+  - {fileID: 8030059934066265309, guid: e0f6eacbc70123940a46790ae18b5925, type: 3}
+  - {fileID: 2721919313766213920, guid: d3b9cc736c346f94db5b60c9bce6fb18, type: 3}
+  - {fileID: 2721919313766213920, guid: 12be9f7da1d2b864cb57a0d0c9c52d41, type: 3}
+  - {fileID: 8030059934066265309, guid: 7903e8a10022cb54c9a35bc46a02901c, type: 3}
+  - {fileID: 2721919313766213920, guid: 53fbf02740de8d440b2b42988c1d82fa, type: 3}
 --- !u!4 &1094530153
 Transform:
   m_ObjectHideFlags: 0

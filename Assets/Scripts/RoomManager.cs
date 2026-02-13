@@ -10,6 +10,9 @@ public class RoomManager : MonoBehaviour
     [SerializeField] int MaxRooms = 30;
     [SerializeField] int MinRooms = 20;
     
+    [Header("Layouts")]
+    [SerializeField] private List<GameObject> layoutPrefabs;
+    
     int roomWidth = 24;
     int roomHeight = 15;
     
@@ -57,6 +60,43 @@ public class RoomManager : MonoBehaviour
         {
             Debug.Log($"Generation Complete, {roomCount} rooms created");
             generationComplete = true;
+            ApplyLayouts();
+        }
+        
+    }
+    // Dentro de RoomManager.cs
+
+    private void ApplyLayouts()
+    {
+        foreach (GameObject roomObj in roomObjects)
+        {
+            Room roomScript = roomObj.GetComponent<Room>();
+        
+            // Instanciamos nuestra clase de utilidad
+            RoomLayout helper = new RoomLayout();
+        
+            // Marcamos si es la sala inicial (la primera de la lista)
+            if (roomObj == roomObjects[0]) helper.isStarting = true;
+
+            helper.CalcDoors(roomScript);
+            helper.CalcLayoutKey();
+            string layoutName = helper.key;
+
+            // IMPORTANTE: La ruta relativa dentro de Resources. 
+            // No incluyas "Resources/" ni la extensión ".prefab".
+            string path = "Prefabs/Layouts/" + layoutName;
+        
+            GameObject prefab = Resources.Load<GameObject>(path);
+
+            if (prefab != null)
+            {
+                GameObject layoutInstance = Instantiate(prefab, roomObj.transform);
+                layoutInstance.transform.localPosition = Vector3.zero;
+            }
+            else
+            {
+                Debug.LogError($"[RoomManager] No se pudo cargar: {path}. Revisa si el nombre coincide exactamente.");
+            }
         }
     }
 
@@ -139,6 +179,7 @@ public class RoomManager : MonoBehaviour
                 }
             }
         }
+        
     }
 
     Room GetRoomScriptAt(Vector2Int index)
