@@ -150,6 +150,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &94247658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94247659}
+  - component: {fileID: 94247660}
+  m_Layer: 0
+  m_Name: Corazones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &94247659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94247658}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.41, y: 6.97, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &94247660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94247658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01a8be691f7000a4280975c1b04a30a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Corazones
 --- !u!1 &197809567
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197809568}
   - component: {fileID: 197809569}
+  - component: {fileID: 197809570}
   m_Layer: 0
   m_Name: HitboxAtaque
   m_TagString: Untagged
@@ -212,11 +257,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.6155062, y: -0.026559174}
+  m_Offset: {x: 1.4901934, y: 2.5712051}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -226,8 +271,20 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.231012, y: 0.94688165}
+  m_Size: {x: 13.34301, y: 5.7713013}
   m_EdgeRadius: 0
+--- !u!114 &197809570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197809567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f450c388a94684b8a59422ad72a7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitboxAtaque
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +420,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 94247659}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -555,10 +613,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edda73a2a73f8d14f9f5936dd8761db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  velocidad: 5
   fuerzaSalto: 10
-  fixedRotation: 0
   animator: {fileID: 835311457}
+  velocidad: 5
+  vidaMax: 0
+  vidaActual: 0
+  ataque: 0
+  velocidadAtaque: 0
+  cooldownAtaque: 0.3
 --- !u!4 &835311454
 Transform:
   m_ObjectHideFlags: 0
