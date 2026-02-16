@@ -184,6 +184,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Corazones_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 0
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e959de7512bca74a99bc8e32f1796b7
+      internalID: -1758369063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corazones_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368f66241fdc8474fa6dece8000dd98c
+      internalID: -226291299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -203,6 +247,8 @@ TextureImporter:
       Corazones_0: 8750613402138083936
       Corazones_1: 5791537624130350713
       Corazones_2: 2074153042782068480
+      Corazones_3: -1758369063
+      Corazones_4: -226291299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

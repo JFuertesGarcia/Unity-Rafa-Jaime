@@ -14,21 +14,31 @@ public class PlayerController : MonoBehaviour
     private Coroutine attackCoroutine;
 
     public float velocidad = 5f;
-    public int vidaMax;
-    public int vidaActual;
+    public int vidaMax = 6;
+    public int vidaActual = 6;
     public float ataque;
-    public float velocidadAtaque = 2f; // Tiempo que dura el ataque
-    public float cooldownAtaque = 2f; // Tiempo extra de espera entre ataques
+    public float velocidadAtaque = 2f;
+    public float cooldownAtaque = 2f;
     private float tiempoSiguienteAtaque = 0;
+    public float tiempoInmunidad = 1.5f;
+    public float tiempoStun = 0.5f;
+    private float timerInmunidad;
+    private float timerStun;
+    private bool esInmune = false;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         if (_rb == null) Debug.LogError("Falta Rigidbody2D");
     }
-
+    
     void Update()
     {
+        if (timerInmunidad > 0) timerInmunidad -= Time.deltaTime;
+        else esInmune = false;
+
+        if (timerStun > 0) timerStun -= Time.deltaTime;
+        
         animator.SetFloat("VelocidadY", _rb.linearVelocity.y);
         animator.SetBool("enSuelo", _enSuelo);
         animator.SetBool("atacando", atacando);
@@ -42,22 +52,26 @@ public class PlayerController : MonoBehaviour
         }
 
         // Movimiento siempre (si lo quieres así)
-        if (velocidadX > 0) transform.localScale = new Vector3(1, 1, 1);
-        else if (velocidadX < 0) transform.localScale = new Vector3(-1, 1, 1);
+        if (timerStun <= 0){
+            if (velocidadX > 0) transform.localScale = new Vector3(1, 1, 1);
+            else if (velocidadX < 0) transform.localScale = new Vector3(-1, 1, 1);
+            transform.position += new Vector3(velocidadX * velocidad * Time.deltaTime, 0, 0);
+            if (Input.GetButtonDown("Jump") && _enSuelo && !atacando)
+            {
+                animator.SetTrigger("Salto");
+                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, fuerzaSalto);
+                _enSuelo = false;
+            }
 
-        transform.position += new Vector3(velocidadX * velocidad * Time.deltaTime, 0, 0);
-
-        if (Input.GetButtonDown("Jump") && _enSuelo && !atacando)
-        {
-            animator.SetTrigger("Salto");
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, fuerzaSalto);
-            _enSuelo = false;
+            if (Input.GetKeyDown(KeyCode.E) && !atacando && Time.time >= tiempoSiguienteAtaque)
+            {
+                attackCoroutine = StartCoroutine(PerformAttack());
+            }
         }
+        
+        
 
-        if (Input.GetKeyDown(KeyCode.E) && !atacando && Time.time >= tiempoSiguienteAtaque)
-        {
-            attackCoroutine = StartCoroutine(PerformAttack());
-        }
+        
     }
 
     IEnumerator PerformAttack()
@@ -103,6 +117,11 @@ public class PlayerController : MonoBehaviour
                 if (punto.normal.y > 0.5f) { _enSuelo = true; break; }
             }
         }
+
+        if (collision.gameObject.CompareTag("Enemigo"))
+        {
+            RecibirDaño();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -119,5 +138,34 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground")) _enSuelo = false;
+    }
+
+    public void RecibirDaño()
+    {
+        // Si somos inmunes, salimos de la función sin hacer nada
+        if (esInmune) return;
+
+        vidaActual--;
+        Debug.Log("Vida restante: " + vidaActual);
+
+        if (vidaActual <= 0)
+        {
+            Debug.Log("Jugador Muerto");
+            // Aquí llamarías a tu lógica de muerte/game over
+            return;
+        }
+
+        // Activamos Inmunidad
+        esInmune = true;
+        timerInmunidad = tiempoInmunidad;
+
+        // Activamos Stun (Bloqueo de movimiento)
+        timerStun = tiempoStun;
+        
+        // Lanzamos el trigger para la animación de daño
+        animator.SetTrigger("Daño"); 
+
+        // Si estaba atacando, interrumpimos el ataque
+        InterruptAttack();
     }
 }
