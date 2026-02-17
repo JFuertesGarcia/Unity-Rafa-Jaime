@@ -52,7 +52,7 @@ public class Corazones : MonoBehaviour
         
         float camx = camara.transform.position.x;
         float camy = camara.transform.position.y;
-        nuevoCorazon.transform.position = new Vector3(cuentapos + camx - 15, 6 + camy, -15);
+        nuevoCorazon.transform.position = new Vector3(cuentapos + camx - 11.5f, 6 + camy, -15);
         cuentapos += 1; 
 
         // LÓGICA DE SPRITES

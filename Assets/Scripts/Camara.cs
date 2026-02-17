@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class Camara : MonoBehaviour
 {
     [SerializeField] private float smoothing = 5f; // Velocidad de movimiento de la cámara
     

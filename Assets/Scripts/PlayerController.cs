@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
 
     public float velocidad = 5f;
     public int vidaMax = 6;
-    public int vidaActual = 6;
-    public float ataque;
+    public int vidaActual;
+    public float ataque = 5f;
     public float velocidadAtaque = 2f;
     public float cooldownAtaque = 2f;
     private float tiempoSiguienteAtaque = 0;
@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        vidaActual = vidaMax;
         _rb = GetComponent<Rigidbody2D>();
         if (_rb == null) Debug.LogError("Falta Rigidbody2D");
     }
@@ -167,5 +168,16 @@ public class PlayerController : MonoBehaviour
 
         // Si estaba atacando, interrumpimos el ataque
         InterruptAttack();
+    }
+
+    public void recibirMejora(Mejoras mejora)
+    {
+        switch (mejora)
+        {
+            case Mejoras.Velocidad: velocidad += 2; break;
+            case Mejoras.VelocidadAtaque: velocidadAtaque += 5; break;
+            case Mejoras.Fuerza: ataque += 1; break;
+            case Mejoras.Vida: vidaMax += 2; vidaActual += 2; break;
+        }
     }
 }
