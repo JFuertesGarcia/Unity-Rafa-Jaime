@@ -8,10 +8,13 @@ public class PlayerController : MonoBehaviour
     public float fuerzaSalto = 10f;
 
     [FormerlySerializedAs("_animator")] public Animator animator;
+    
     private Rigidbody2D _rb;
     private bool _enSuelo = false;
     private bool atacando = false;
     private Coroutine attackCoroutine;
+    
+    Notificacion notificacion;
 
     public float velocidad = 5f;
     public int vidaMax = 6;
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
         vidaActual = vidaMax;
         _rb = GetComponent<Rigidbody2D>();
         if (_rb == null) Debug.LogError("Falta Rigidbody2D");
+        notificacion = GameObject.Find("Notif").GetComponent<Notificacion>();
     }
     
     void Update()
@@ -51,8 +55,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat(Movement, Mathf.Abs(velocidadX * velocidad));
         }
-
-        // Movimiento siempre (si lo quieres así)
+        
         if (timerStun <= 0){
             if (velocidadX > 0) transform.localScale = new Vector3(1, 1, 1);
             else if (velocidadX < 0) transform.localScale = new Vector3(-1, 1, 1);
@@ -69,10 +72,6 @@ public class PlayerController : MonoBehaviour
                 attackCoroutine = StartCoroutine(PerformAttack());
             }
         }
-        
-        
-
-        
     }
 
     IEnumerator PerformAttack()
@@ -179,5 +178,6 @@ public class PlayerController : MonoBehaviour
             case Mejoras.Fuerza: ataque += 1; break;
             case Mejoras.Vida: vidaMax += 2; vidaActual += 2; break;
         }
+        notificacion.Notificar($"{mejora.ToString().ToUpper()} +");
     }
 }
