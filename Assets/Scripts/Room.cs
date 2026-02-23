@@ -21,4 +21,13 @@ public class Room : MonoBehaviour
         else if (direction == Vector2Int.right && rightDoor != null)
             rightDoor.estado = EstadoPuerta.Abierta;
     }
+
+    public Door getDoor(Vector2Int direction)
+    {
+        if (direction == Vector2Int.up) return topDoor;
+        if (direction == Vector2Int.down) return bottomDoor;
+        if (direction == Vector2Int.left) return leftDoor;
+        if (direction == Vector2Int.right) return rightDoor;
+        return null;
+    }
 }
