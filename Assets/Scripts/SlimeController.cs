@@ -13,7 +13,7 @@ public class SlimeAnimatorDriver : MonoBehaviour
 
     // Animator parameter names
     private static readonly int IsJumping = Animator.StringToHash("isJumping");
-    private static readonly int Hit = Animator.StringToHash("Hit");
+    private static readonly int TakeHit = Animator.StringToHash("takeHit");
     private static readonly int Ability = Animator.StringToHash("Ability");
 
     void Awake()
@@ -27,13 +27,13 @@ public class SlimeAnimatorDriver : MonoBehaviour
         bool onGround = false;
 
         if (groundCheck != null)
-            onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            onGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius);
 
         // isJumping = NOT on ground (simple)
         if (animator) animator.SetBool(IsJumping, !onGround);
 
         // Test rápido con teclas (para probar anims sin IA)
-        if (Input.GetKeyDown(KeyCode.H) && animator) animator.SetTrigger(Hit);
+        if (Input.GetKeyDown(KeyCode.H) && animator) animator.SetTrigger(TakeHit);
         if (Input.GetKeyDown(KeyCode.J) && animator) animator.SetTrigger(Ability);
     }
 

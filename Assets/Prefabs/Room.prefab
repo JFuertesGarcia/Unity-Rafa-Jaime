@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 3065264271580402016}
   - component: {fileID: 4243867266984918998}
   - component: {fileID: 7708268715974873445}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BottomWall
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 7077425114607551859}
   - component: {fileID: 1872742262028632181}
   - component: {fileID: 7389146275389645788}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BottomWall (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
