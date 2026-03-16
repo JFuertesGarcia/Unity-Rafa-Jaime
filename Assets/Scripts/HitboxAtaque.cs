@@ -1,20 +1,22 @@
-using UnityEditor.Build;
 using UnityEngine;
+
 public class HitboxAtaque : MonoBehaviour
 {
-    
-    // Update is called once per frame
-    void Update()
+    private PlayerController jugador;
+
+    private void Awake()
     {
-        
+        jugador = GetComponentInParent<PlayerController>();
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D otro)
     {
-        if (other.CompareTag("Enemigo"))
+        if (!otro.CompareTag("Enemigo")) return;
+
+        VidaEnemigo vidaEnemigo = otro.GetComponent<VidaEnemigo>();
+        if (vidaEnemigo != null && jugador != null)
         {
-            PlayerController parentScript = transform.parent.GetComponent<PlayerController>();
-            float danio = parentScript.ataque;
-            // pasarle el daño al enemigo
+            vidaEnemigo.RecibirDanio(jugador.ataque);
         }
     }
 }
