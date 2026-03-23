@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     
     Notificacion notificacion;
 
+    public HitboxAtaque hitboxAtaque;
+    
     public float velocidad = 5f;
     public int vidaMax = 6;
     public int vidaActual;
@@ -79,9 +81,16 @@ public class PlayerController : MonoBehaviour
         atacando = true;
         animator.SetBool("atacando", true);
 
-        Debug.Log($"[Attack] START t={Time.time:F3} velocidadAtaque={velocidadAtaque}");
+        // Pequeño “windup”
+        yield return new WaitForSeconds(velocidadAtaque * 0.35f);
 
-        yield return new WaitForSeconds(velocidadAtaque);
+        // Ventana activa del golpe
+        if (hitboxAtaque != null) hitboxAtaque.ActivarHitbox(true);
+        yield return new WaitForSeconds(velocidadAtaque * 0.25f);
+        if (hitboxAtaque != null) hitboxAtaque.ActivarHitbox(false);
+
+        // Recovery
+        yield return new WaitForSeconds(velocidadAtaque * 0.40f);
 
         FinishAttack();
     }
