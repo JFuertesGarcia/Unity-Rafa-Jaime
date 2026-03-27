@@ -28,22 +28,27 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        if (_collider == null) return;
+        if (_collider == null || spriterenderer == null) return;
 
-        if (estado == EstadoPuerta.Abierta)
+        switch (estado)
         {
-            spriterenderer.sprite = abierto;
-            // PRUEBA RADICAL: Si está abierta, el collider se apaga del todo
-            _collider.enabled = false;
-        }
-        else
-        {
+            case EstadoPuerta.Abierta:
+                spriterenderer.sprite = abierto;
+                _collider.enabled = false;
+                break;
 
-            spriterenderer.sprite = pared;
-            _collider.enabled = true;
-            _collider.isTrigger = false;
-        }
+            case EstadoPuerta.Cerrada:
+                spriterenderer.sprite = cerrado;
+                _collider.enabled = true;
+                _collider.isTrigger = false;
+                break;
 
-        GetComponent<SpriteRenderer>().color = (estado == EstadoPuerta.Abierta) ? Color.green : Color.white;
+            case EstadoPuerta.Pared:
+            default:
+                spriterenderer.sprite = pared;
+                _collider.enabled = true;
+                _collider.isTrigger = false;
+                break;
+        }
     }
 }

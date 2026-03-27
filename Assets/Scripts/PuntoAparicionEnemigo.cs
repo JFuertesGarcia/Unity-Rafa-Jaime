@@ -9,5 +9,7 @@ public enum TipoEnemigo
 {
     Slime,
     Murcielago,
-    Tirador
+    Tirador,
+    Golem,
+    Skull
 }

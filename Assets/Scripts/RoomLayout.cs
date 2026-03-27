@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RoomLayout
 {
+    
     public bool hasTop;
     public bool hasBottom;
     public bool hasLeft;

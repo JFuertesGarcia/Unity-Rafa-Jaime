@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Calavera : MonoBehaviour
+public class Skull : MonoBehaviour
 {
     [Header("Referencias")]
-    public Transform objetivo; // jugador
+    public Transform objetivo;
     public Rigidbody2D rb;
 
     [Header("Movimiento")]
@@ -15,7 +15,6 @@ public class Calavera : MonoBehaviour
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
 
-        // Auto-buscar jugador por nombre/tag
         if (objetivo == null)
         {
             GameObject jugadorObj = GameObject.Find("JugadorObj");
@@ -29,13 +28,7 @@ public class Calavera : MonoBehaviour
 
         float distancia = Vector2.Distance(transform.position, objetivo.position);
 
-        if (distancia > rangoDeteccion)
-        {
-            rb.linearVelocity = Vector2.zero;
-            return;
-        }
-
-        if (distancia < distanciaFrenado)
+        if (distancia > rangoDeteccion || distancia < distanciaFrenado)
         {
             rb.linearVelocity = Vector2.zero;
             return;
@@ -44,7 +37,6 @@ public class Calavera : MonoBehaviour
         Vector2 direccion = (objetivo.position - transform.position).normalized;
         rb.linearVelocity = direccion * velocidad;
 
-        // Voltear sprite
         if (direccion.x > 0.05f) transform.localScale = new Vector3(1, 1, 1);
         else if (direccion.x < -0.05f) transform.localScale = new Vector3(-1, 1, 1);
     }

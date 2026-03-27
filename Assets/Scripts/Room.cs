@@ -7,6 +7,9 @@ public class Room : MonoBehaviour
     [SerializeField] private Door leftDoor;
     [SerializeField] private Door rightDoor;
     
+    public bool esSalaFinal = false;
+    public bool esSalaInicial = false;
+    
     
     public Vector2Int RoomIndex { get; set; }
 

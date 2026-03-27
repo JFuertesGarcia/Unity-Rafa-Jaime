@@ -28,6 +28,9 @@ public class RoomManager : MonoBehaviour
     private int roomCount;
     
     private bool generationComplete = false;
+    
+    public bool esSalaFinal = false;
+    public bool esSalaInicial = false;
 
     private void Start()
     {
@@ -60,6 +63,7 @@ public class RoomManager : MonoBehaviour
         {
             Debug.Log($"Generation Complete, {roomCount} rooms created");
             generationComplete = true;
+            MarcarSalaFinal();
             ApplyLayouts();
         }
         
@@ -211,8 +215,6 @@ public class RoomManager : MonoBehaviour
         return new Vector3(roomWidth * (gridX - gridSizeX / 2),
             roomHeight * (gridY - gridSizeY / 2));
     }
-    
-    
 
     private void OnDrawGizmos()
     {
@@ -227,5 +229,30 @@ public class RoomManager : MonoBehaviour
                 Gizmos.DrawWireCube(new Vector3(position.x,position.y), new Vector3(roomWidth, roomHeight, 1));
             }
         }
+    }
+    
+    private void MarcarSalaFinal()
+    {
+        Vector2Int indiceInicial = new Vector2Int(gridSizeX / 2, gridSizeY / 2);
+
+        Room mejor = null;
+        int mejorDist = -1;
+
+        foreach (GameObject obj in roomObjects)
+        {
+            Room r = obj.GetComponent<Room>();
+            int dist = Mathf.Abs(r.RoomIndex.x - indiceInicial.x) + Mathf.Abs(r.RoomIndex.y - indiceInicial.y);
+
+            if (dist > mejorDist)
+            {
+                mejorDist = dist;
+                mejor = r;
+            }
+        }
+
+        // primera sala (por cómo generas) es la inicial
+        roomObjects[0].GetComponent<Room>().esSalaInicial = true;
+
+        if (mejor != null) mejor.esSalaFinal = true;
     }
 }
